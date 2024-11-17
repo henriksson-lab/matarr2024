@@ -20,7 +20,7 @@ library(Seurat)
 
 
 ###Creating seurat object for the first round data
-Invivo.HDM_1 <- Read10X("filtered")
+Invivo.HDM_1 <- Read10X("round1")
 
 Invivo <- CreateSeuratObject(counts = Invivo.HDM_1$`Gene Expression`, project = "Round1", min.features = -1)
 Invivo@assays$RNA@counts[1:10,1:10]
@@ -146,7 +146,7 @@ DimPlot(Invivo.singlets_new, label = TRUE)
 
 
 ##Creating seurat object for the second round data
-Invivo.HDM_2 <- Read10X("~/Desktop/DATA/scRNA seq/Data for second round/Filtered_files/Round2_Analysis")
+Invivo.HDM_2 <- Read10X("round2")
 
 Invivo2 <- CreateSeuratObject(counts = Invivo.HDM_2$`Gene Expression`, project = "Round2", min.features = -1)
 Invivo2@assays$RNA@counts[1:10,1:10]
